@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import vn.hoidanit.jobhunter.domain.User;
 import vn.hoidanit.jobhunter.service.UserService;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 public class UserController {
@@ -43,6 +44,19 @@ public class UserController {
     @GetMapping("/user")
     public List<User> getAllUser() {
         return this.userService.fetchAll();
+    }
+
+    // update user
+    // @PutMapping("path/{id}")
+    // public String putMethodName(@PathVariable String id, @RequestBody String
+    // entity) {
+    // //TODO: process PUT request
+
+    // return entity;
+    // }
+    @PutMapping("/user")
+    public User updateUser(@RequestBody User postmanUser) {
+        return this.userService.handleUpdateUser(postmanUser);
     }
 
 }
