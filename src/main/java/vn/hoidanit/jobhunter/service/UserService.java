@@ -75,13 +75,10 @@ public class UserService {
     public User handleUpdateUser(User reqUser) {
         User currentUser = this.fetchUserById(reqUser.getId());
         if (currentUser != null) {
-            currentUser.setEmail(reqUser.getEmail());
             currentUser.setName(reqUser.getName());
-            currentUser.setPassword(reqUser.getPassword());
             currentUser.setAddress(reqUser.getAddress());
             currentUser.setGender(reqUser.getGender());
             currentUser.setAge(reqUser.getAge());
-            currentUser.setName(reqUser.getName());
 
             // update
             currentUser = this.userRepository.save(currentUser);
