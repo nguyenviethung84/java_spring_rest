@@ -52,7 +52,7 @@ public class JobController {
         }
 
         return ResponseEntity.ok()
-                .body(this.jobService.update(job));
+                .body(this.jobService.update(job, currentJob.get()));
     }
 
     @DeleteMapping("/jobs/{id}")
@@ -86,4 +86,3 @@ public class JobController {
         return ResponseEntity.ok().body(this.jobService.fetchAll(spec, pageable));
     }
 }
-
