@@ -30,7 +30,7 @@ public class UserService {
         this.roleService = roleService;
     }
 
-    public User handlerCreateUser(User user) {
+    public User handleCreateUser(User user) {
         // check company
         if (user.getCompany() != null) {
             Optional<Company> companyOptional = this.companyService.findById(user.getCompany().getId());
