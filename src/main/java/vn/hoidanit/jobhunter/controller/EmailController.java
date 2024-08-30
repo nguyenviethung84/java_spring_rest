@@ -22,7 +22,8 @@ public class EmailController {
     @ApiMessage("Send simple email")
     public ResponseEntity<String> sendSimpleEmail() {
         try {
-            this.emailService.sendSimpleEmail();
+            // this.emailService.sendSimpleEmail();
+            this.emailService.sendEmailFromTemplateSync("nvhk53c@gmail.com", "test send email", "job");
             return ResponseEntity.ok("Email sent successfully");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
