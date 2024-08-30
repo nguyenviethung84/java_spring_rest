@@ -1,3 +1,5 @@
+package vn.hoidanit.jobhunter.config;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,4 +127,3 @@ public class DatabaseInitializer implements CommandLineRunner {
     }
 
 }
-
